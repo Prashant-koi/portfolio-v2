@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import PersonalStatusMonitor from "@/components/PersonalStatusMonitor";
 import ProjectsSection from "@/components/ProjectsSection";
 import GitHubProjects from "@/components/GitHubProjects";
 import SkillsSection from "@/components/SkillsSection";
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <ParticlesBackground />
       <Header />
+      <PersonalStatusMonitor />
       <ProjectsSection />
       <GitHubProjects />
       <SkillsSection />
