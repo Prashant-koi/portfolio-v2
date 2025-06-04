@@ -12,7 +12,7 @@ export default function PersonalStatusMonitor() {
   const [statusData, setStatusData] = useState<StatusData | null>(null)
   const [isOffline, setIsOffline] = useState(false)
 
-  const apiUrl = 'http://localhost:8081'
+  const apiUrl = 'https://portfolio-v2-green-delta-82.vercel.app/api/status'
   const updateInterval = 3000 // 3 seconds
 
   const updateStatus = async () => {

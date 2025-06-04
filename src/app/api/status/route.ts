@@ -1,7 +1,9 @@
 // app/api/status/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 
-// In-memory storage (for demo - use database in production)
+// Your personal API key from environment variable
+const API_KEY = process.env.PERSONAL_STATUS_API_KEY;
+
 let currentStatus = {
   thoughts: "App offline",
   activeApps: [],
@@ -10,17 +12,28 @@ let currentStatus = {
   lastUpdated: null as Date | null
 };
 
+function validateApiKey(request: NextRequest): boolean {
+  const apiKeyFromHeader = request.headers.get('X-API-Key');
+  return apiKeyFromHeader === API_KEY;
+}
+
 export async function POST(request: NextRequest) {
   try {
+    // Require API key for POST (updating status)
+    if (!validateApiKey(request)) {
+      return NextResponse.json(
+        { error: 'Unauthorized - Invalid API key' }, 
+        { status: 401 }
+      );
+    }
+
     const data = await request.json();
     
-    // Validate the incoming data
     if (typeof data.thoughts === 'string' && 
         Array.isArray(data.activeApps) && 
         typeof data.busy === 'boolean' &&
         typeof data.timestamp === 'number') {
       
-      // Update the current status
       currentStatus = {
         ...data,
         lastUpdated: new Date()
@@ -49,7 +62,7 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
   try {
-    // Check if data is recent (within last 10 seconds)
+    // GET is public - no API key required so visitors can see your status
     const now = Date.now() / 1000;
     const isRecent = currentStatus.timestamp && (now - currentStatus.timestamp) < 10;
     
@@ -77,14 +90,13 @@ export async function GET() {
   }
 }
 
-// Enable CORS for your domain
 export async function OPTIONS() {
   return new NextResponse(null, {
     status: 200,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Headers': 'Content-Type, X-API-Key',
     },
   });
 }
