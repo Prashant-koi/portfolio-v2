@@ -170,9 +170,9 @@
 
         /* Personal Status Monitor styles */
 .status-card {
-  max-width: 500px;
-  margin: 20px auto;
-  padding: 20px;
+  max-width: 400px;
+  margin: 15px auto;
+  padding: 15px;
   border-radius: 15px;
   border: 3px solid #000;
   background: #fff;
@@ -186,16 +186,16 @@
 }
 
 .status-card.offline {
-  border-color: #ff0000;
+  border-color: #8B0000;  /* Dark red border */
   background: #fff;
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px 15px;
 }
 
 .status-header {
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: #000;
   text-align: left;
 }
@@ -203,58 +203,69 @@
 .status-thought {
   display: flex;
   align-items: center;
-  margin: 15px 0;
-  gap: 8px;
+  margin: 8px 0;
+  gap: 6px;
 }
 
 .lightbulb {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .thought-text {
-  font-size: 1em;
+  font-size: 0.9em;
   color: #000;
   font-weight: bold;
 }
 
-.status-chart {
-  margin: 15px 0;
-  font-size: 1.5em;
+.status-chart-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;  /* Same gap as thought row */
+  margin: 8px 0;
 }
 
-.online-indicator {
-  background: #4caf50;
+.status-chart {
+  font-size: 1.2em;
+}
+
+.status-indicator {
   color: white;
-  padding: 8px 20px;
-  border-radius: 25px;
+  padding: 4px 12px;
+  border-radius: 20px;
   text-align: center;
   font-weight: bold;
-  margin: 15px 0;
-  display: inline-block;
-  font-size: 0.9em;
+  font-size: 0.8em;
+}
+
+.status-indicator.online {
+  background: #4caf50;
+}
+
+.status-indicator.busy {
+  background: #ff9800;
 }
 
 .status-apps {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 15px;
+  gap: 6px;
+  margin-top: 8px;
 }
 
 .hand-icon {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .apps-text {
-  font-size: 1em;
+  font-size: 0.9em;
   color: #000;
 }
 
 .offline-text {
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: bold;
-  color: #ff0000;
+  color: #000;  /* Black text color */
   font-family: 'Comic Sans MS', cursive, sans-serif;
   transform: rotate(-2deg);
-  text-shadow: 2px 2px 0px #000;
+  text-shadow: 2px 2px 0px #8B0000;  /* Dark red shadow */
 }

@@ -52,13 +52,19 @@ export default function PersonalStatusMonitor() {
     return () => clearInterval(interval)
   }, [])
 
-  if (isOffline) {
+  // Check if the thoughts indicate offline state
+  const isAppOffline = statusData?.thoughts === "App offline" || isOffline
+
+  if (isAppOffline) {
     return (
       <div className="status-card offline">
         <div className="offline-text">Prasant is Offline</div>
       </div>
     )
   }
+
+  const isBusy = statusData?.busy || false
+  const statusLabel = isBusy ? 'Busy' : 'Online'
 
   return (
     <div className="status-card online">
@@ -67,8 +73,12 @@ export default function PersonalStatusMonitor() {
         <span className="lightbulb">💡</span>
         <span className="thought-text">{statusData?.thoughts || 'Loading thoughts...'}</span>
       </div>
-      <div className="status-chart">📊</div>
-      <div className="online-indicator">Online</div>
+      <div className="status-chart-row">
+        <span className="status-chart">📊</span>
+        <div className={`status-indicator ${isBusy ? 'busy' : 'online'}`}>
+          {statusLabel}
+        </div>
+      </div>
       <div className="status-apps">
         <span className="hand-icon">👋</span>
         <span className="apps-text">
