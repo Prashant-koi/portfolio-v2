@@ -54,19 +54,26 @@ export default function PersonalStatusMonitor() {
 
   if (isOffline) {
     return (
-      <div className="status-monitor-offline">
-        <div className="status-text">Desktop app offline</div>
+      <div className="status-card offline">
+        <div className="offline-text">Prasant is Offline</div>
       </div>
     )
   }
 
   return (
-    <div className="status-monitor">
-      <div className="status-thoughts">
-        💭 {statusData?.thoughts || 'Loading thoughts...'}
+    <div className="status-card online">
+      <div className="status-header">Check out my current thoughts</div>
+      <div className="status-thought">
+        <span className="lightbulb">💡</span>
+        <span className="thought-text">{statusData?.thoughts || 'Loading thoughts...'}</span>
       </div>
-      <div className="status-busy">
-        📊 Status: {statusData ? (statusData.busy ? 'Busy' : 'Free') : 'Loading...'}
+      <div className="status-chart">📊</div>
+      <div className="online-indicator">Online</div>
+      <div className="status-apps">
+        <span className="hand-icon">👋</span>
+        <span className="apps-text">
+          Using: {statusData?.activeApps?.join(', ') || 'Loading...'}
+        </span>
       </div>
     </div>
   )
