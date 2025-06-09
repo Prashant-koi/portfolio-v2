@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 interface StatusData {
   thoughts: string;
@@ -70,17 +71,35 @@ export default function PersonalStatusMonitor() {
     <div className="status-card online">
       <div className="status-header">Check out my current thoughts</div>
       <div className="status-thought">
-        <span className="lightbulb">💡</span>
+        <Image 
+          src="/lightbulb.png" 
+          alt="lightbulb" 
+          width={18} 
+          height={18} 
+          className="lightbulb-image"
+        />
         <span className="thought-text">{statusData?.thoughts || 'Loading thoughts...'}</span>
       </div>
       <div className="status-chart-row">
-        <span className="status-chart">📊</span>
+        <Image 
+          src="/graph.png" 
+          alt="graph" 
+          width={18} 
+          height={18} 
+          className="graph-image"
+        />
         <div className={`status-indicator ${isBusy ? 'busy' : 'online'}`}>
           {statusLabel}
         </div>
       </div>
       <div className="status-apps">
-        <span className="hand-icon">👋</span>
+        <Image 
+          src="/hand.png" 
+          alt="hand" 
+          width={18} 
+          height={18} 
+          className="graph-image"
+        />
         <span className="apps-text">
           Using: {statusData?.activeApps?.join(', ') || 'Loading...'}
         </span>
