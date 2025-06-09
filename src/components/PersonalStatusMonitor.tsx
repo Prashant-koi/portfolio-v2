@@ -56,11 +56,20 @@ export default function PersonalStatusMonitor() {
   // Check if the thoughts indicate offline state
   const isAppOffline = statusData?.thoughts === "App offline" || isOffline
 
+  const serviceCreditText = (
+    <div style={{ fontSize: '0.7rem', textAlign: 'center', marginTop: '0px' }}>
+      This service was written using C++ <a href="https://github.com/Prashant-koi/PersonalStatus" target="_blank" rel="noopener noreferrer">check it out</a>
+    </div>
+  );
+
   if (isAppOffline) {
     return (
-      <div className="status-card offline">
-        <div className="offline-text">Prasant is Offline</div>
-      </div>
+      <>
+        <div className="status-card offline">
+          <div className="offline-text">Prasant is Offline</div>
+        </div>
+        {serviceCreditText}
+      </>
     )
   }
 
@@ -68,42 +77,45 @@ export default function PersonalStatusMonitor() {
   const statusLabel = isBusy ? 'Busy' : 'Online'
 
   return (
-    <div className="status-card online">
-      <div className="status-header">Check out my current thoughts</div>
-      <div className="status-thought">
-        <Image 
-          src="/lightbulb.png" 
-          alt="lightbulb" 
-          width={18} 
-          height={18} 
-          className="lightbulb-image"
-        />
-        <span className="thought-text">{statusData?.thoughts || 'Loading thoughts...'}</span>
-      </div>
-      <div className="status-chart-row">
-        <Image 
-          src="/graph.png" 
-          alt="graph" 
-          width={18} 
-          height={18} 
-          className="graph-image"
-        />
-        <div className={`status-indicator ${isBusy ? 'busy' : 'online'}`}>
-          {statusLabel}
+    <>
+      <div className="status-card online">
+        <div className="status-header">My current thoughts</div>
+        <div className="status-thought">
+          <Image 
+            src="/lightbulb.png" 
+            alt="lightbulb" 
+            width={18} 
+            height={18} 
+            className="lightbulb-image"
+          />
+          <span className="thought-text">{statusData?.thoughts || 'Loading thoughts...'}</span>
+        </div>
+        <div className="status-chart-row">
+          <Image 
+            src="/graph.png" 
+            alt="graph" 
+            width={18} 
+            height={18} 
+            className="graph-image"
+          />
+          <div className={`status-indicator ${isBusy ? 'busy' : 'online'}`}>
+            {statusLabel}
+          </div>
+        </div>
+        <div className="status-apps">
+          <Image 
+            src="/hand.png" 
+            alt="hand" 
+            width={18} 
+            height={18} 
+            className="graph-image"
+          />
+          <span className="apps-text">
+            Using: {statusData?.activeApps?.join(', ') || 'Loading...'}
+          </span>
         </div>
       </div>
-      <div className="status-apps">
-        <Image 
-          src="/hand.png" 
-          alt="hand" 
-          width={18} 
-          height={18} 
-          className="graph-image"
-        />
-        <span className="apps-text">
-          Using: {statusData?.activeApps?.join(', ') || 'Loading...'}
-        </span>
-      </div>
-    </div>
+      {serviceCreditText}
+    </>
   )
 }
