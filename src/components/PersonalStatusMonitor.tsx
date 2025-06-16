@@ -97,7 +97,7 @@ export default function PersonalStatusMonitor() {
               Status: Offline
             </div>
             <div className="font-normal text-gray-300 text-center mt-2">
-              Desktop app is not running
+              Hint: I am probably travelling...or sleeping
             </div>
           </div>
         </div>
