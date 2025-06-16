@@ -4,7 +4,7 @@ import PersonalStatusMonitor from "./PersonalStatusMonitor";
 
 export default function IntroSidebar() {
     return (
-        <div className="h-full p-8 mt-20 flex flex-col items-center justify-start pt-16 overflow-y-auto">
+        <div className="h-full p-8 mt-15 flex flex-col items-center justify-start pt-16 overflow-y-auto">
             {/* Profile Picture and Name Side by Side */}
             <div className="flex items-center gap-6">
                 {/* Profile Picture */}
