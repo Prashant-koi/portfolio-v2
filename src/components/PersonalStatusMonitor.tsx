@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 interface StatusData {
@@ -12,9 +12,10 @@ interface StatusData {
 export default function PersonalStatusMonitor() {
   const [statusData, setStatusData] = useState<StatusData | null>(null)
   const [isOffline, setIsOffline] = useState(false)
+  const intervalRef = useRef<NodeJS.Timeout | null>(null)
 
   const apiUrl = 'https://www.prasantk.me/api/status'
-  const updateInterval = 3000 // 3 seconds
+  const updateInterval = 30000 // 30 seconds
 
   const updateStatus = async () => {
     try {
@@ -41,10 +42,40 @@ export default function PersonalStatusMonitor() {
     }
   }
 
+  const startPolling = () => {
+    if (intervalRef.current) return // Already polling
+    updateStatus() // Immediate update
+    intervalRef.current = setInterval(updateStatus, updateInterval)
+  }
+
+  const stopPolling = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current)
+      intervalRef.current = null
+    }
+  }
+
   useEffect(() => {
-    updateStatus()
-    const interval = setInterval(updateStatus, updateInterval)
-    return () => clearInterval(interval)
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        stopPolling()
+        console.log('Page hidden - stopping status updates')
+      } else {
+        startPolling()
+        console.log('Page visible - resuming status updates')
+      }
+    }
+
+    // Start polling initially
+    startPolling()
+
+    // Listen for visibility changes
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
+    return () => {
+      stopPolling()
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+    }
   }, [])
 
   const isAppOffline = statusData?.thoughts === "App offline" || isOffline
@@ -66,7 +97,7 @@ export default function PersonalStatusMonitor() {
               Status: Offline
             </div>
             <div className="font-normal text-gray-300 text-center mt-2">
-              Hint: I am probably sleeping
+              Desktop app is not running
             </div>
           </div>
         </div>
