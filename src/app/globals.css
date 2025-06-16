@@ -1,302 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-* {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            /* font-family: 'Playfair Display', serif; */
-        }
+/* Fixed background that doesn't move with scroll */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  background-image: 
+    linear-gradient(rgba(128, 128, 128, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(128, 128, 128, 0.3) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+  pointer-events: none;
+}
 
-        html {
-          font-size: 16px;
-        }
+/* Remove the old grid-background class styling */
+.grid-background {
+  background-color: transparent;
+  min-height: 100vh;
+}
 
-        body {
-            line-height: 1.4;
-            color: #333;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 15px;
-            position: relative;
-            z-index: 1;
-            background-color: rgba(255, 255, 255, 0.95); /* semi-transparent background */
-        }
-        
-        /* Particle background styles */
-        #particles-js {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-color: white; /* Dark tech blue background */
-        }
-        
-        /* Rest of your existing styles */
-        .contact-info {
-            text-align: center;
-            margin: 20px 0;
-        }
+/* Set Inter as the global font with base size - EXEMPT h1 tags */
+*:not(h1) {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px; /* Base font size */
+}
 
-        .contact-info a {
-            color: #000;
-            text-decoration: underline;
-            margin: 0 10px;
-        }
+/* Keep h1 tags with their own font family and sizing */
+h1 {
+  font-family: 'Inter', sans-serif;
+  
+  /* h1 will use whatever size is specified in Tailwind classes */
+}
 
-        .contact-info a[href*="linkedin"] {
-            color: #0000FF;
-        }
+/* Font hierarchy classes */
+.font-attention {     /* Headers, project names, uni names - BOLD */
+  font-weight: 700;
+  font-size: 1.25rem; /* 20px */
+}
 
-        .contact-info a[href*="linkedin"]:visited {
-            color: #800080;
-        }
+.font-secondary {     /* Company names, locations - UNBOLDED but prominent */
+  font-weight: 500;
+  font-size: 1.125rem; /* 18px */
+}
 
-        .contact-info a[href*="github"] {
-            color: #0000FF;
-        }
-
-        .contact-info a[href*="github"]:visited {
-            color: #800080;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        header {
-            text-align: center;
-            padding: 15px 0;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 15px;
-        }
-
-        .contact-info {
-            margin: 10px 0;
-        }
-
-        .contact-info a {
-            color: #333;
-            text-decoration: underline;
-            margin: 0 8px;
-            font-size: 0.9em;
-        }
-
-        section {
-            margin: 20px 0;
-        }
-
-        h1 { font-size: 3em;
-             font-weight: bold; }
-        h2 { 
-            font-size: 1.3em; 
-            margin-bottom: 12px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #eee;
-        }
-        h3 { font-size: 1.1em; margin-bottom: 5px; }
-
-        .project-item {
-            margin-bottom: 15px;
-        }
-
-        .project-item p {
-            margin-bottom: 8px;
-            font-size: 0.95em;
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin: 5px 0 10px 0;
-        }
-
-        .skill-tag {
-            background-color: #f0f0f0;
-            padding: 2px 8px;
-            border-radius: 3px;
-            font-size: 0.8em;
-        }
-
-        .honors {
-            margin: 10px 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
-            border-top: 1px solid #ddd;
-            font-size: 0.9em;
-        }
-
-        #github-projects {
-            margin-top: 20px;
-        }
-
-        .github-repo {
-            border: 1px solid #ddd;
-            padding: 12px;
-            margin-bottom: 12px;
-            border-radius: 4px;
-        }
-
-        .github-repo h3 {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .github-stats {
-            font-size: 0.8em;
-            color: #666;
-        }
-
-        .repo-link {
-            color: #333;
-            text-decoration: none;
-        }
-
-        .repo-link:hover {
-            text-decoration: underline;
-        }
-
-        p {
-            font-size: 0.95em;
-        }
-        
-        a {
-            text-decoration: underline;
-        }
-
-        /* Personal Status Monitor styles */
-.status-card {
-  max-width: 400px;
-  margin: 15px auto;
-  margin-bottom: 0px;
-  padding: 15px;
-  border-radius: 15px;
-  border: 3px solid #000;
-  background: #fff;
-  position: relative;
-  font-family: 'Caveat', cursive;
+.font-normal {        /* Base content */
   font-weight: 400;
+  font-size: 1rem; /* 16px */
 }
 
-.status-card.online {
-  border-color: #000;
-  background: #fff;
-}
-
-.status-card.offline {
-  border-color: #8B0000;  /* Dark red border */
-  background: #fff;
-  text-align: center;
-  padding: 30px 15px;
-}
-
-.status-header {
-  font-size: 1.2em;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #000;
-  text-align: left;
-  font-family: 'Caveat', cursive;
-}
-
-.status-thought {
-  display: flex;
-  align-items: center;
-  margin: 8px 0;
-  gap: 6px;
-}
-
-.lightbulb {
-  font-size: 1.1em;
-}
-
-.lightbulb-image {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.graph-image {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.thought-text {
-  font-size: 1.1em;
-  color: #000;
-  font-weight: 700;
-  font-family: 'Caveat', cursive;
-  line-height: 1.1;
-}
-
-.status-chart-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;  /* Same gap as thought row */
-  margin: 8px 0;
-}
-
-.status-chart {
-  font-size: 1.2em;
-}
-
-.status-indicator {
-  color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 1em;
-  font-family: 'Caveat', cursive;
-  line-height: 1.1;
-  height: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.status-indicator.online {
-  background: #4caf50;
-}
-
-.status-indicator.busy {
-  background: #ff9800;
-}
-
-.status-apps {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 8px;
-}
-
-.hand-icon {
-  font-size: 1.1em;
-  line-height: 1.1;
-}
-
-.apps-text {
-  font-size: 1.1em;
-  color: #000;
-  font-family: 'Caveat', cursive;
+.font-muted {         /* Dates, less important info */
   font-weight: 400;
-  line-height: 1.1;
+  font-size: 0.875rem; /* 14px */
+  color: #9CA3AF; /* gray-400 */
 }
 
-.offline-text {
-  font-size: 2.2em;
-  font-weight: 700;
-  color: #000;  /* Black text color */
-  font-family: 'Caveat', cursive;
-  transform: rotate(-2deg);
-  text-shadow: 2px 2px 0px #8B0000;  /* Dark red shadow */
+.font-small {         /* Least attention - skills, tags */
+  font-weight: 400;
+  font-size: 0.75rem; /* 12px */
 }
