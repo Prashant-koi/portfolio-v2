@@ -22,7 +22,7 @@ export default function IntroSidebar() {
                         Full Stack Developer
                     </span>
                     <p className="font-muted text-lg mt-2 text-left">
-                        Hattiesburg, Mississippi
+                        Boston, MA
                     </p>
                 </div>
             </div>
