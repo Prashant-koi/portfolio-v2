@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Prasant Koirala - Portfolio',
-  description: 'Full Stack Developer Portfolio',
+  title: 'Personal Status Monitor',
+  description: 'Real-time personal status tracker',
 }
 
 export default function RootLayout({
@@ -14,9 +14,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body>
+      <body className="grid-background">
         {children}
       </body>
     </html>

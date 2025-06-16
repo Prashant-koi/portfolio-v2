@@ -11,12 +11,14 @@
   "dependencies": {
     "next": "^14",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^5.5.0",
+    "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
-    "@tailwindcss/vite": "^4.0.0-alpha.0",
+    "@tailwindcss/postcss": "^4.1.10",
+    "@tailwindcss/vite": "^4.1.10",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
