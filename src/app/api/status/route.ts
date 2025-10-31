@@ -64,7 +64,7 @@ export async function GET() {
   try {
     // GET is public - no API key required so visitors can see your status
     const now = Date.now() / 1000;
-    const isRecent = currentStatus.timestamp && (now - currentStatus.timestamp) < 10;
+    const isRecent = currentStatus.timestamp && (now - currentStatus.timestamp) < 20;
     
     if (!isRecent) {
       return NextResponse.json({
