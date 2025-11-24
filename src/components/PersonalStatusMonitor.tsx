@@ -94,10 +94,10 @@ export default function PersonalStatusMonitor() {
           <div className="absolute left-0 top-0 w-1 bg-red-500 h-full rounded-full"></div>
           <div className="bg-gray-800 border-2 border-red-600 rounded-lg p-4 shadow-lg">
             <div className="font-attention text-red-400 text-center">
-              Status: Unknown
+              Status: Offline
             </div>
             <div className="font-normal text-gray-300 text-center mt-2">
-              Hint: I have switched distros and this service doesn't work right now. I will fix this within a few days!
+              Hint: I am probably attending classes, sleeping or travelling!!
             </div>
           </div>
         </div>
