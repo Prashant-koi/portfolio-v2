@@ -6,7 +6,7 @@ export default function AboutMe() {
       </h1>
       <div className="text-gray-300 leading-relaxed space-y-4">
         <p className="font-normal">
-          Hey there! I'm Prasant, a Computer Science student who likes to build stuff that solves small but annoying issues. Currently working as a Web/App Intern At Optimal Answers, LLC.
+          Hey there! I'm Prasant, a Computer Science student who likes to work in the lower level of stuff(systems engineering). Currently a RA working with ML models and I am also really interested in research in general.
         </p>
         <p className="font-normal">
           I've recently created a desktop widget that tracks what I'm up to in real-time (yeah, that's what powers the status monitor on this site!).
