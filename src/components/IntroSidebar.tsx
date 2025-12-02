@@ -19,7 +19,7 @@ export default function IntroSidebar() {
                         Prasant Koirala
                     </h1>
                     <span className="text-gray-400 text-lg mt-1">
-                        Full Stack Developer
+                        Aspiring Systems Engineer
                     </span>
                     <p className="font-muted text-lg mt-2 text-center md:text-left">
                         Live to Build
