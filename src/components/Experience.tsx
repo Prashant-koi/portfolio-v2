@@ -1,18 +1,34 @@
 const experiences = [
   {
+    company: "University of Southern Mississippi",
+    position: "AI/ML Research Assistant",
+    location: "Hattiesburg, Mississippi",
+    duration: "Sept. 2025 - Present",
+    logo: "/usm-logo.png",
+    contributions: [
+      "Built and trained a ModernBERT-based co-attention neural network in PyTorch for social engineering email detection, achieving 100% accuracy on a held-out test set of 158 email pairs.",
+      "Engineered an email pair processing pipeline from a preprocessed dataset derived from 500,000+ corporate emails, generating 171 structured emails across 4 attacker profiles.",
+      "Trained a 151M+ parameter transformer with AdamW over 20 epochs, reducing validation loss from 0.57 to 0.0009 while maintaining perfect precision, recall, F1, and AUROC",
+      "Integrated the model with an upstream GNN-based anomaly detector, achieving 92% end-to-end system accuracy for social engineering detection",
+    ],
+    skills: ["Python", "PyTorch", "Transformers", "Research", "Machine Learning"]
+  },
+  {
     company: "Optimal Answers",
     position: "Web/App Development Intern",
     location: "Gulfport, Mississippi",
-    duration: "June 2025 - Present",
-    logo: "/optimal-logo.jpg", 
+    duration: "June 2025 - Aug. 2025",
+    logo: "/optimal-logo.jpg",
     contributions: [
-      "Collabrated the the Engineering and Marketing team to enhance the company’s Public Website and the Main Software Website.",
-      "Optimized navigation time in the Software by connecting table/database Navigation button to UI",
+      "Built backend features for internal and customer-facing web applications using C#, SQL, and REST APIs, supporting day-to-day workflows for business and operations teams.",
+      "Refactored performance-critical backend logic and SQL database queries, reducing UI latency and cutting employee task time by 30% across core application flows",
+      "Collaborated closely with design, QA, and data teams to deliver 5+ production features, participating in requirement discussions, testing, and rollout."
     ],
-    skills: ["HTML", "CSS", "JavaScript", "Web Flow", "SEO", "C#"]
+    skills: ["C#", "SQL", "REST APIs", "SEO", "JavaScript"]
   },
   // Add more experiences here as needed
-]
+];
+
 
 export default function Experience() {
   return (

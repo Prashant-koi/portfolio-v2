@@ -5,6 +5,21 @@ import Image from 'next/image'
 
 const projects = [
     {
+        title: "Mang0S-x86 Operating System",
+        description: "Open Source x86 operating system built with 5 other devs",
+        logo: "/mangos-logo.png", 
+        contributions: [
+            "Implemented a custom x86 Operating System bootstrapped via the Limine bootloader, transitioning from bootloader state into protected kernel execution",
+            " Built a kernel-level framebuffer terminal with direct video memory access, text rendering, scrolling, and cursor control without libc.",
+            " Designed low-level memory and I/O abstractions to safely interface with hardware from kernel space."
+        ],
+        skills: ["C", "Make", "Bash", "Linux", "Memory Management","Operating Systen"],
+        links: {
+            github: "https://github.com/DylanBT928/mangOS",
+            release: "https://github.com/DylanBT928/mangOS/releases"
+        }
+    },
+    {
         title: "Personal Status- App made using C++",
         description: "C++ desktop widget for live portfolio status , sharing your thoughts & active apps in real-time.",
         logo: "/personalstatus-logo.png", 
@@ -20,18 +35,18 @@ const projects = [
         }
     },
     {
-        title: "Song Review App",
-        description: "An App for song lovers where you can review songs and see the ranking of songs according to their genre, along with a top ranking.",
-        logo: "/song-app-logo.png",
+        title: "Timeonar- AI powered Research Helper",
+        description: "A full-stack web app that converts Research Queries into interactive research timeline.",
+        logo: "/timeonar-logo.png",
         contributions: [
-            "An App for song lovers where you can review songs and see the ranking of songs according to their genre, along with a top ranking.",
-            "Built with modern web technologies for optimal performance",
-            "Implemented user authentication and review management system"
+            "Built a full-stack web application that converts natural-language queries into interactive literature timelines using a backend LLM/AI API orchestration service.",
+            "Made a React + TypeScript frontend and a .NET C# REST API to deliver validated requests and structured, citation-backed responses, improving reliability of aggregated results.",
+            " Designed backend workflows implementing multi-stage pipelines with failure isolation, partial result propagation, and incremental response streaming, reducing perceived latency. "
         ],
-        skills: ["MySQL", "Express.js", "React.js", "Node.js"],
+        skills: ["MySQL", "C#", ".NET", "React", "TypeScript","LLM API","Prompt Manipulation"],
         links: {
-            github: "https://github.com/Prashant-koi/song-review-app",
-            demo: null
+            github: "https://github.com/Prashant-koi/Timeonar",
+            demo: "https://timeonar.vercel.app/"
         }
     },
     {
@@ -49,36 +64,6 @@ const projects = [
             demo: null
         }
     },
-    {
-        title: "Prep AI",
-        description: "Study helper website for exam preparation and schedule management. Features: schedule building, flash card generator, and quiz generation.",
-        logo: "/prep-ai-logo.png",
-        contributions: [
-            "Study helper website for exam preparation and schedule management",
-            "Features include schedule building, flash card generator, and quiz generation",
-            "Built with modern framework for responsive user experience"
-        ],
-        skills: ["React.js", "Tailwind", "Spring Boot", "Node.js"],
-        links: {
-            github: "https://github.com/Prashant-koi/prep-ai",
-            demo: null
-        }
-    },
-    {
-        title: "P's Market",
-        description: "P's Market is a website that will enable you to see and analyze stocks of hundreds and possibly thousands of stock markets and exchanges.",
-        logo: "/ps-market-logo.png",
-        contributions: [
-            "P's Market is a website that will enable you to see and analyze stocks of hundreds and possibly thousands of stock markets and exchanges",
-            "P's Market has a protected login feature made possible by using JWT",
-            "Using Node.js as the backend and MongoDB for the database server, where all your information is kept encrypted and safe"
-        ],
-        skills: ["React.js", "Tailwind", "Spring Boot", "Node.js"],
-        links: {
-            github: "https://github.com/Prashant-koi/ps-market",
-            demo: null
-        }
-    }
 ]
 
 export default function Projects() {
