@@ -10,13 +10,29 @@ const projects = [
         logo: "/mangos-logo.png", 
         contributions: [
             "Implemented a custom x86 Operating System bootstrapped via the Limine bootloader, transitioning from bootloader state into protected kernel execution",
-            " Built a kernel-level framebuffer terminal with direct video memory access, text rendering, scrolling, and cursor control without libc.",
-            " Designed low-level memory and I/O abstractions to safely interface with hardware from kernel space."
+            "Built a kernel-level framebuffer terminal with direct video memory access, text rendering, scrolling, and cursor control without libc.",
+            "Designed low-level memory and I/O abstractions to safely interface with hardware from kernel space."
         ],
         skills: ["C", "Make", "Bash", "Linux", "Memory Management","Operating Systen"],
         links: {
             github: "https://github.com/DylanBT928/mangOS",
             release: "https://github.com/DylanBT928/mangOS/releases"
+        }
+    },
+    {
+        title: "No-Brainrot - Productivy Focused Browser Extension",
+        description: "Browser Extension that helps you stay focused by blocking short-form content and tracking your web time.",
+        logo: "/no-brainrot-logo.png", 
+        contributions: [
+            "Built a browser extension that blocks certain sites and tracks time, using TS, Webpack, IndexedDB, and Chrome Extension APIs.",
+            "Eliminated a race condition in IndexedDB writes by serializing add/update operations with a queue and transaction guards, ensuring consistent time-tracking data.",
+            "Structured background, content, popup, and dashboard modules with shared types and utilities, improving code reuse and maintainability across extension surfaces.",
+            "Added time analytics for the dashboard to surface usage insights while keeping computation local for privacy."
+        ],
+        skills: ["TypeScript","Webpack","Browser Extension","IndexedDB"],
+        links: {
+            github: "https://github.com/Prashant-koi/no-brainrot",
+            release: "https://chromewebstore.google.com/detail/no-brainrot-%E2%80%94-block-short/lkicfbepffbgaalgkdkjlojkfniaffnm"
         }
     },
     {
@@ -41,7 +57,7 @@ const projects = [
         contributions: [
             "Built a full-stack web application that converts natural-language queries into interactive literature timelines using a backend LLM/AI API orchestration service.",
             "Made a React + TypeScript frontend and a .NET C# REST API to deliver validated requests and structured, citation-backed responses, improving reliability of aggregated results.",
-            " Designed backend workflows implementing multi-stage pipelines with failure isolation, partial result propagation, and incremental response streaming, reducing perceived latency. "
+            "Designed backend workflows implementing multi-stage pipelines with failure isolation, partial result propagation, and incremental response streaming, reducing perceived latency. "
         ],
         skills: ["MySQL", "C#", ".NET", "React", "TypeScript","LLM API","Prompt Manipulation"],
         links: {
