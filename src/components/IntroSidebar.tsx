@@ -41,7 +41,7 @@ export default function IntroSidebar() {
                 </a>
                 {/* LinkedIn Button */}
                 <a 
-                    href="https://www.linkedin.com/in/prasant-koirala-6686082ab/" 
+                    href="https://www.linkedin.com/in/prasant-koirala/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-blue-950 hover:bg-blue-700 transition-colors border-2 border-blue-950 rounded-lg shadow text-white font-medium min-w-0"
