@@ -1,6 +1,6 @@
-const languages = ["JavaScript", "Python", "C++", "C#", "Java", "TypeScript", "C"]
+const languages = ["JavaScript", "Python", "C++", "C#", "TypeScript", "C"]
 
-const frameworks = ["React.js", "Next.js", "Express.js", "Spring Boot", "Tailwind CSS", "Node.js"]
+const frameworks = ["React.js", "Next.js", "Express.js", "Tailwind CSS", "Node.js"]
 
 const databases = ["MySQL", "MongoDB", "PostgreSQL", "SQLite"]
 
