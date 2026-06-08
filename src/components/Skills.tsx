@@ -1,10 +1,12 @@
-const languages = ["JavaScript", "Python", "C++", "C#", "TypeScript", "C"]
+const languages = ["Python", "Go", "Rust", "C++", "TypeScript"]
 
-const frameworks = ["React.js", "Next.js", "Express.js", "Tailwind CSS", "Node.js"]
+const frameworks = ["FastAPI", "Node.js (Express)", "React", "TailwindCSS"]
 
-const databases = ["MySQL", "MongoDB", "PostgreSQL", "SQLite"]
+const systemsInfra = ["Git", "Docker", "Redis", "Nginx", "CI/CD (GitHub Actions)", "GCP", "Prometheus", "Grafana"]
 
-const technologies = ["Git", "Docker", "AWS", "Linux", "Shell Scripting", "JWT", "REST APIs"]
+const databases = ["PostgreSQL", "MongoDB"]
+
+const aiMl = ["PyTorch", "Pandas", "NumPy", "TensorFlow", "FAISS", "LLM APIs"]
 
 export default function Skills() {
   return (
@@ -12,17 +14,16 @@ export default function Skills() {
       <h1 className="text-3xl font-bold text-gray-200  mb-6">
         Skills
       </h1>
-      
+
       {/* Languages */}
       <div className="mb-6">
-        {/* Category Header - SECONDARY */}
         <h3 className="font-secondary text-gray-200 mb-3">
           Languages
         </h3>
         <div className="flex flex-wrap gap-2">
           {languages.map((language, index) => (
-            <span 
-              key={index} 
+            <span
+              key={index}
               className="px-3 py-1 bg-green-600 text-white font-small font-medium rounded-full "
             >
               {language}
@@ -38,11 +39,28 @@ export default function Skills() {
         </h3>
         <div className="flex flex-wrap gap-2">
           {frameworks.map((framework, index) => (
-            <span 
-              key={index} 
+            <span
+              key={index}
               className="px-3 py-1 bg-red-600 text-white font-small font-medium rounded-full "
             >
               {framework}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Systems & Infra */}
+      <div className="mb-6">
+        <h3 className="font-secondary text-gray-200 mb-3">
+          Systems &amp; Infra
+        </h3>
+        <div className="flex flex-wrap gap-2">
+          {systemsInfra.map((item, index) => (
+            <span
+              key={index}
+              className="px-3 py-1 bg-blue-600 text-white font-small font-medium rounded-full "
+            >
+              {item}
             </span>
           ))}
         </div>
@@ -55,8 +73,8 @@ export default function Skills() {
         </h3>
         <div className="flex flex-wrap gap-2">
           {databases.map((database, index) => (
-            <span 
-              key={index} 
+            <span
+              key={index}
               className="px-3 py-1 bg-yellow-600 text-white font-small font-medium rounded-full "
             >
               {database}
@@ -65,18 +83,18 @@ export default function Skills() {
         </div>
       </div>
 
-      {/* Technologies */}
+      {/* AI/ML */}
       <div className="mb-6">
         <h3 className="font-secondary text-gray-200 mb-3">
-          Technologies
+          AI/ML
         </h3>
         <div className="flex flex-wrap gap-2">
-          {technologies.map((technology, index) => (
-            <span 
-              key={index} 
-              className="px-3 py-1 bg-blue-600 text-white font-small font-medium rounded-full "
+          {aiMl.map((item, index) => (
+            <span
+              key={index}
+              className="px-3 py-1 bg-purple-600 text-white font-small font-medium rounded-full "
             >
-              {technology}
+              {item}
             </span>
           ))}
         </div>

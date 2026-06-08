@@ -32,8 +32,6 @@ export default function Home() {
         </div>
       </main>
       
-      {/* Divider - only visible on large screens */}
-      <div className="hidden lg:block fixed left-[40%] top-0 w-[1px] bg-gray-700 h-screen pointer-events-none"></div>
     </div>
   );
 }

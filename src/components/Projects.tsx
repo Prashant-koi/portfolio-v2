@@ -5,6 +5,21 @@ import Image from 'next/image'
 
 const projects = [
     {
+        title: "Lavender — Open Source EDR",
+        description: "Distributed Linux endpoint detection and response system with real-time threat visibility.",
+        logo: "/lavender-logo.png",
+        contributions: [
+            "Built a distributed Linux threat detection system in Go with real-time dashboard, detection workers, and structured event logging for hardware and system diagnostics.",
+            "Wrote a Rust eBPF kernel module intercepting Linux syscalls and kernel tracepoints; structured event logs for anomaly detection and hardware diagnostics.",
+            "Implemented NATS-based event streaming as a single source of truth, ensuring ordered, lossless data flow across detection workers and dashboard."
+        ],
+        skills: ["Go", "Rust", "eBPF", "Linux Kernel", "Distributed Systems", "NATS"],
+        links: {
+            github: "https://github.com/Prashant-koi/Lavender",
+            release: null
+        }
+    },
+    {
         title: "Mang0S-x86 Operating System",
         description: "Open Source x86 operating system built with 5 other devs",
         logo: "/mangos-logo.png", 
@@ -20,10 +35,11 @@ const projects = [
         }
     },
     {
-        title: "No-Brainrot - Productivy Focused Browser Extension",
+        title: "No-Brainrot - Productivity Focused Browser Extension",
         description: "Browser Extension that helps you stay focused by blocking short-form content and tracking your web time.",
-        logo: "/no-brainrot-logo.png", 
+        logo: "/no-brainrot-logo.png",
         contributions: [
+            "Short-form content blocking Chrome browser extension across multiple platforms with 289 installs & 20 daily users.",
             "Built a browser extension that blocks certain sites and tracks time, using TS, Webpack, IndexedDB, and Chrome Extension APIs.",
             "Eliminated a race condition in IndexedDB writes by serializing add/update operations with a queue and transaction guards, ensuring consistent time-tracking data.",
             "Structured background, content, popup, and dashboard modules with shared types and utilities, improving code reuse and maintainability across extension surfaces.",

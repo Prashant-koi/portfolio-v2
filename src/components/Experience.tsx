@@ -1,9 +1,20 @@
 const experiences = [
   {
-    company: "University of Southern Mississippi",
+    company: "Meta",
+    position: "Production Engineering (SRE) Fellow",
+    location: "Remote, San Francisco, CA",
+    duration: "June 2026",
+    logo: "/meta-logo.png",
+    contributions: [
+      "Selected as one of ~50 Production Engineering Fellows (SRE) to work on Meta's systems infrastructure — contributing to reliability, observability, and automated deployment of production services.",
+    ],
+    skills: ["SRE", "Systems Infrastructure", "Observability", "Reliability"]
+  },
+  {
+    company: "Cyber Innovation Lab | USM",
     position: "AI/ML Research Assistant",
     location: "Hattiesburg, Mississippi",
-    duration: "Sept. 2025 - Present",
+    duration: "Sept. 2025 - Feb. 2026",
     logo: "/usm-logo.png",
     contributions: [
       "Built and trained a ModernBERT-based co-attention neural network in PyTorch for social engineering email detection, achieving 100% accuracy on a held-out test set of 158 email pairs.",
@@ -15,9 +26,9 @@ const experiences = [
   },
   {
     company: "Optimal Answers",
-    position: "Web/App Development Intern",
+    position: "Software Engineering Intern",
     location: "Gulfport, Mississippi",
-    duration: "June 2025 - Aug. 2025",
+    duration: "Jun. 2025 - Aug. 2025",
     logo: "/optimal-logo.jpg",
     contributions: [
       "Built backend features for internal and customer-facing web applications using C#, SQL, and REST APIs, supporting day-to-day workflows for business and operations teams.",
@@ -26,7 +37,6 @@ const experiences = [
     ],
     skills: ["C#", "SQL", "REST APIs", "SEO", "JavaScript"]
   },
-  // Add more experiences here as needed
 ];
 
 
