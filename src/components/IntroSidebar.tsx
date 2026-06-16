@@ -19,10 +19,10 @@ export default function IntroSidebar() {
                         Prasant Koirala
                     </h1>
                     <span className="text-gray-400 text-lg mt-1">
-                        Aspiring Systems Engineer
+                        Systems & Infra
                     </span>
                     <p className="font-muted text-lg mt-2 text-center md:text-left">
-                        Live to Build
+                        he/him/his
                     </p>
                 </div>
             </div>

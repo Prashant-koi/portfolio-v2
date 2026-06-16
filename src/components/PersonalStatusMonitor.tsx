@@ -137,7 +137,7 @@ export default function PersonalStatusMonitor() {
                   Current Thoughts
                 </div>
                 <div className="font-normal text-gray-200 leading-tight">
-                  {statusData?.thoughts || 'Loading thoughts...'}
+                  {statusData?.thoughts || 'Hello stranger!'}
                 </div>
               </div>
             </div>
