@@ -9,6 +9,24 @@ interface StatusData {
   activeApps: string[];
 }
 
+function useTypewriter(text: string, speed = 35) {
+  const [displayed, setDisplayed] = useState('')
+
+  useEffect(() => {
+    setDisplayed('')
+    let i = 0
+    const timer = setInterval(() => {
+      i++
+      setDisplayed(text.slice(0, i))
+      if (i >= text.length) clearInterval(timer)
+    }, speed)
+
+    return () => clearInterval(timer)
+  }, [text, speed])
+
+  return displayed
+}
+
 export default function PersonalStatusMonitor() {
   const [statusData, setStatusData] = useState<StatusData | null>(null)
   const [isOffline, setIsOffline] = useState(false)
@@ -79,6 +97,7 @@ export default function PersonalStatusMonitor() {
   }, [])
 
   const isAppOffline = statusData?.thoughts === "App offline" || isOffline
+  const typedThoughts = useTypewriter(statusData?.thoughts || 'Hello stranger!')
 
   const serviceCreditText = (
     <div className="font-small text-center mt-3 text-gray-400">
@@ -137,7 +156,8 @@ export default function PersonalStatusMonitor() {
                   Current Thoughts
                 </div>
                 <div className="font-normal text-gray-200 leading-tight">
-                  {statusData?.thoughts || 'Hello stranger!'}
+                  {typedThoughts}
+                  <span className="inline-block w-[2px] h-[1em] align-middle ml-0.5 bg-gray-200 animate-pulse" />
                 </div>
               </div>
             </div>
