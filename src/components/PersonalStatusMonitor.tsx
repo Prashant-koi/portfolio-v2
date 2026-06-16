@@ -11,20 +11,25 @@ interface StatusData {
 
 function useTypewriter(text: string, speed = 35) {
   const [displayed, setDisplayed] = useState('')
+  const [done, setDone] = useState(false)
 
   useEffect(() => {
     setDisplayed('')
+    setDone(false)
     let i = 0
     const timer = setInterval(() => {
       i++
       setDisplayed(text.slice(0, i))
-      if (i >= text.length) clearInterval(timer)
+      if (i >= text.length) {
+        setDone(true)
+        clearInterval(timer)
+      }
     }, speed)
 
     return () => clearInterval(timer)
   }, [text, speed])
 
-  return displayed
+  return { displayed, done }
 }
 
 export default function PersonalStatusMonitor() {
@@ -97,7 +102,7 @@ export default function PersonalStatusMonitor() {
   }, [])
 
   const isAppOffline = statusData?.thoughts === "App offline" || isOffline
-  const typedThoughts = useTypewriter(statusData?.thoughts || 'Hello stranger!')
+  const { displayed: typedThoughts, done: typedDone } = useTypewriter(statusData?.thoughts || 'Hello stranger!')
 
   const serviceCreditText = (
     <div className="font-small text-center mt-3 text-gray-400">
@@ -157,7 +162,9 @@ export default function PersonalStatusMonitor() {
                 </div>
                 <div className="font-normal text-gray-200 leading-tight">
                   {typedThoughts}
-                  <span className="inline-block w-[2px] h-[1em] align-middle ml-0.5 bg-gray-200 animate-pulse" />
+                  {!typedDone && (
+                    <span className="inline-block w-[2px] h-[1em] align-middle ml-0.5 bg-gray-200 animate-pulse" />
+                  )}
                 </div>
               </div>
             </div>
