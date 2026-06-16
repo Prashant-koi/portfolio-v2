@@ -2,16 +2,23 @@
 
 import { useEffect, useState } from 'react'
 
-export default function ViewCounter({ slug }: { slug: string }) {
+// increment=true (post page): POST to bump the count once on mount.
+// increment=false (listing): GET to display the count without changing it.
+export default function ViewCounter({
+  slug,
+  increment = true,
+}: {
+  slug: string
+  increment?: boolean
+}) {
   const [views, setViews] = useState<number | null>(null)
 
   useEffect(() => {
-    // Increment once on mount, then show the returned total.
-    fetch(`/api/views/${slug}`, { method: 'POST' })
+    fetch(`/api/views/${slug}`, { method: increment ? 'POST' : 'GET' })
       .then((res) => res.json())
       .then((data) => setViews(data.views))
       .catch(() => setViews(null))
-  }, [slug])
+  }, [slug, increment])
 
   if (views === null) return null
 

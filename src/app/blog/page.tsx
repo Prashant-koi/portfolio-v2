@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getAllPosts } from '@/lib/blog'
+import ViewCounter from '@/components/ViewCounter'
 
 export const metadata: Metadata = {
   title: 'Blog — Prasant Koirala',
@@ -22,6 +23,7 @@ export default function BlogIndex() {
   return (
     <main className="mx-auto max-w-2xl px-4 py-12 md:py-16">
       <div className="rounded-lg bg-gray-900/80 backdrop-blur-sm border border-gray-700 p-6 md:p-8 shadow-lg">
+        {/* Header */}
         <Link href="/" className="text-sm text-blue-400 hover:text-blue-300">
           ← Back home
         </Link>
@@ -31,18 +33,29 @@ export default function BlogIndex() {
           Notes on systems, infrastructure, and things I learned the hard way.
         </p>
 
-        <ul className="mt-8 space-y-6">
+        {/* Each post in its own card */}
+        <ul className="mt-8 space-y-4">
           {posts.length === 0 && (
-            <li className="text-gray-400">No posts yet — check back soon.</li>
+            <li className="rounded-lg bg-gray-800/60 border border-gray-700 p-6 text-gray-400">
+              No posts yet — check back soon.
+            </li>
           )}
           {posts.map((post) => (
             <li key={post.slug}>
-              <Link href={`/blog/${post.slug}`} className="group block">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="group block rounded-lg bg-gray-800/60 border border-gray-700 p-5 transition-colors hover:border-blue-600 hover:bg-gray-800/90"
+              >
                 <h2 className="text-xl font-semibold text-gray-100 group-hover:text-blue-400 transition-colors">
                   {post.title}
                 </h2>
-                <p className="mt-1 text-sm text-gray-500">{formatDate(post.date)}</p>
-                <p className="mt-2 text-gray-300 leading-relaxed">{post.summary}</p>
+                <div className="mt-1 flex items-center gap-3 text-sm text-gray-500">
+                  <span>{formatDate(post.date)}</span>
+                  <ViewCounter slug={post.slug} increment={false} />
+                </div>
+                {post.summary && (
+                  <p className="mt-3 text-gray-300 leading-relaxed">{post.summary}</p>
+                )}
               </Link>
             </li>
           ))}
