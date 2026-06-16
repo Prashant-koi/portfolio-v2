@@ -1,0 +1,41 @@
+---
+title: "Hello, world"
+date: "2026-06-16"
+---
+
+Hey hey hey everyone! This is my first blog post and I made this so that I can just write 
+and post stuff!
+
+## What to expect
+
+I'll mostly write about about my projects and stuff I find interesting the things I find myself
+explaining to people anyway:
+
+- Things I learned the hard way
+- Notes from projects
+- The occasional deep dive
+
+Some C++ code because why not:
+
+```c++
+// C++17
+#include<iostream>
+#include<string>
+
+void print(std::string_view thoughts);
+
+int main() 
+{
+    std::string thoughts {"Hello World!"};
+
+    print(thoughts);
+    return 0;
+}
+
+void print(const std::string_view thoughts)
+{
+    std::cout << thoughts << '\n';
+}
+```
+
+Thanks for reading. More soon!

@@ -1,5 +1,6 @@
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { HiOutlineDownload } from "react-icons/hi";
+import Link from "next/link";
 import PersonalStatusMonitor from "./PersonalStatusMonitor";
 
 export default function IntroSidebar() {
@@ -37,7 +38,7 @@ export default function IntroSidebar() {
                     className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-blue-950 hover:bg-blue-700 transition-colors border-2 border-blue-950 rounded-lg shadow text-white font-medium min-w-0"
                 >
                     <HiOutlineDownload className="text-2xl" />
-                    <span className="font-small">Resume</span>
+                    <span>Resume</span>
                 </a>
                 {/* LinkedIn Button */}
                 <a 
@@ -50,15 +51,22 @@ export default function IntroSidebar() {
                     <span>LinkedIn</span>
                 </a>
                 {/* GitHub Button */}
-                <a 
-                    href="https://github.com/Prashant-koi" 
-                    target="_blank" 
+                <a
+                    href="https://github.com/Prashant-koi"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-blue-950 hover:bg-blue-700 transition-colors border-2 border-blue-950 rounded-lg shadow text-white font-medium min-w-0"
                 >
                     <FaGithub className="text-2xl" />
                     <span>GitHub</span>
                 </a>
+                {/* Blog Button */}
+                <Link
+                    href="/blog"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-blue-950 hover:bg-blue-700 transition-colors border-2 border-blue-950 rounded-lg shadow text-white font-medium min-w-0"
+                >
+                    <span>Blog</span>
+                </Link>
             </div>
             
             {/* Personal Status Monitor */}
