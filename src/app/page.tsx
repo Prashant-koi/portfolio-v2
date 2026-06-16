@@ -1,6 +1,5 @@
 import IntroSidebar from "@/components/IntroSidebar";
 import AboutMe from "@/components/AboutMe";
-import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Education from "@/components/Education";
@@ -25,7 +24,6 @@ export default function Home() {
       <main className="w-full lg:ml-[40%]">
         <div className="p-4 md:p-8">
           <AboutMe />
-          <Skills />
           <Experience />
           <Projects />
           <Education />
