@@ -28,7 +28,7 @@ export default function BlogIndex() {
           ← Back home
         </Link>
 
-        <h1 className="mt-4 text-3xl font-bold text-white">Blog</h1>
+        <h1 className="mt-4 text-3xl font-bold text-gray-100">Blog</h1>
         <p className="mt-2 text-gray-400">
           Notes on systems, infrastructure, and things I learned the hard way.
         </p>

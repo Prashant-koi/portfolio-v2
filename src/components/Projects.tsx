@@ -137,7 +137,7 @@ export default function Projects() {
                             {/* Title and Description */}
                             <div className="flex-1">
                                 {/* Project Title - ATTENTION GRABBING BOLD */}
-                                <h3 className="font-attention text-white mb-2">
+                                <h3 className="font-attention text-gray-100 mb-2">
                                     {project.title}
                                 </h3>
                                 {/* Description - SECONDARY */}

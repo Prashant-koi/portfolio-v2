@@ -16,7 +16,7 @@ export default function IntroSidebar() {
                 />
                 {/* Name, Title, and Location */}
                 <div className="flex flex-col items-center md:items-start">
-                    <h1 className="text-4xl font-bold text-white text-center md:text-left">
+                    <h1 className="text-4xl font-bold text-gray-100 text-center md:text-left">
                         Prasant Koirala
                     </h1>
                     <span className="text-gray-400 text-lg mt-1">

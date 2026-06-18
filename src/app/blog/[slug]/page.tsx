@@ -51,7 +51,7 @@ export default async function BlogPost({
           ← All posts
         </Link>
 
-        <h1 className="mt-4 text-3xl font-bold text-white">{post.title}</h1>
+        <h1 className="mt-4 text-3xl font-bold text-gray-100">{post.title}</h1>
         <div className="mt-2 flex items-center gap-3 text-sm text-gray-500">
           <span>{formatDate(post.date)}</span>
           <ViewCounter slug={post.slug} />

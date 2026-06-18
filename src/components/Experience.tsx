@@ -67,7 +67,7 @@ export default function Experience() {
               {/* Title and Location */}
               <div className="flex-1">
                 {/* Position - ATTENTION GRABBING BOLD */}
-                <h3 className="font-attention text-white mb-1">
+                <h3 className="font-attention text-gray-100 mb-1">
                   {exp.position}
                 </h3>
                 {/* Company and Location - SECONDARY */}

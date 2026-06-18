@@ -35,7 +35,7 @@ export default function Education() {
                             {/* Degree and University Info */}
                             <div className="flex-1">
                                 {/* Degree - ATTENTION GRABBING BOLD */}
-                                <h3 className="font-attention text-white mb-1">
+                                <h3 className="font-attention text-gray-100 mb-1">
                                     {edu.degree}
                                 </h3>
                                 {/* University and Location - SECONDARY */}
